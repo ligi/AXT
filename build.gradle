@@ -10,6 +10,13 @@ buildscript {
     classpath group: 'com.stanfy.android', name: 'gradle-plugin-java-robolectric', version: '2.0'
   }
 }
+sourceSets {
+    main {
+        java {
+            srcDir 'src/java'
+        }
+    }
+}
 
 version = '0.1'
 
