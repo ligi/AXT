@@ -3,6 +3,7 @@ package org.ligi.androidhelper.helpers;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.view.View;
 
 public class ActivityHelper {
 
@@ -12,7 +13,7 @@ public class ActivityHelper {
         mActivity =activity;
     }
 
-    public <T> T findById(int id) {
+    public <T extends View> T findById(int id) {
         return (T) mActivity.findViewById(id);
     }
 
