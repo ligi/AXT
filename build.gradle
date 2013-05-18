@@ -7,6 +7,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
+    // use version 2.0 for Robolectric 2.0
     classpath group: 'com.stanfy.android', name: 'gradle-plugin-java-robolectric', version: '2.0'
   }
 }
@@ -18,7 +19,7 @@ sourceSets {
     }
 }
 
-version = '0.4'
+version = '0.9'
 
 javarob {
     packageName = 'org.ligi.androidhelper'
@@ -46,6 +47,6 @@ dependencies {
     testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.0'
 
     compile group: 'com.google.android', name: 'android', version: '4.1.1.4'
-    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.0-alpha-2'
+    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.0'
 }
 

@@ -5,10 +5,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.androidhelper.AndroidHelper;
 import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Runner.class)
+@RunWith(RobolectricTestRunner.class)
 public class CheckBoxHelperTest {
 
     @Test

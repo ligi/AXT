@@ -5,11 +5,12 @@ import android.view.View;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.androidhelper.AndroidHelper;
+import org.robolectric.RobolectricTestRunner;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@RunWith(Runner.class)
+@RunWith(RobolectricTestRunner.class)
 public class BitmapHelperTest {
 
     @Test
