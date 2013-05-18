@@ -5,6 +5,7 @@ import java.io.File;
 import org.junit.runners.model.InitializationError;
 
 import org.robolectric.AndroidManifest;
+import org.robolectric.RobolectricContext;
 import org.robolectric.RobolectricTestRunner;
 
 /**
