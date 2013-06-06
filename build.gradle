@@ -1,13 +1,11 @@
 apply plugin : 'java-robolectric'
 apply plugin : 'idea'
 
-// get 'java-robolectric' from Maven Central
 buildscript {
   repositories {
     mavenCentral()
   }
   dependencies {
-    // use version 2.0 for Robolectric 2.0
     classpath group: 'com.stanfy.android', name: 'gradle-plugin-java-robolectric', version: '2.0'
   }
 }
@@ -19,7 +17,7 @@ sourceSets {
     }
 }
 
-version = '0.9'
+version = '0.10'
 
 javarob {
     packageName = 'org.ligi.androidhelper'
@@ -48,6 +46,6 @@ dependencies {
     testCompile group: 'org.easytesting', name: 'fest-assert', version: '1.4'
 
     compile group: 'com.google.android', name: 'android', version: '4.1.1.4'
-    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.0-alpha-2'
+    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.0'
 }
 
