@@ -46,6 +46,6 @@ dependencies {
     testCompile group: 'org.easytesting', name: 'fest-assert', version: '1.4'
 
     compile group: 'com.google.android', name: 'android', version: '4.1.1.4'
-    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.0'
+    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.1'
 }
 
