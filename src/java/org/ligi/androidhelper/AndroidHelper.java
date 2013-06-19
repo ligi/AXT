@@ -5,7 +5,17 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.widget.CheckBox;
-import org.ligi.androidhelper.helpers.*;
+import android.widget.EditText;
+
+import org.ligi.androidhelper.helpers.ActivityHelper;
+import org.ligi.androidhelper.helpers.ArrayHelper;
+import org.ligi.androidhelper.helpers.BitmapHelper;
+import org.ligi.androidhelper.helpers.CheckBoxHelper;
+import org.ligi.androidhelper.helpers.FileHelper;
+import org.ligi.androidhelper.helpers.FragmentHelper;
+import org.ligi.androidhelper.helpers.IntentHelper;
+import org.ligi.androidhelper.helpers.URLHelper;
+import org.ligi.androidhelper.helpers.dialog.EditTextHelper;
 
 import java.io.File;
 import java.net.URL;
@@ -41,5 +51,9 @@ public class AndroidHelper {
 
     public static URLHelper at(URL url) {
         return new URLHelper(url);
+    }
+
+    public static EditTextHelper at(EditText editText) {
+        return new EditTextHelper(editText);
     }
 }
