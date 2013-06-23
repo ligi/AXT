@@ -5,11 +5,12 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.view.View;
 
-public class ActivityHelper {
+public class ActivityHelper extends ContextHelper {
 
     private Activity mActivity;
 
     public ActivityHelper(Activity activity) {
+        super (activity);
         mActivity =activity;
     }
 

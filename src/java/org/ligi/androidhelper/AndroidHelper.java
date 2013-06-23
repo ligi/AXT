@@ -2,8 +2,10 @@ package org.ligi.androidhelper;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -11,10 +13,12 @@ import org.ligi.androidhelper.helpers.ActivityHelper;
 import org.ligi.androidhelper.helpers.ArrayHelper;
 import org.ligi.androidhelper.helpers.BitmapHelper;
 import org.ligi.androidhelper.helpers.CheckBoxHelper;
+import org.ligi.androidhelper.helpers.ContextHelper;
 import org.ligi.androidhelper.helpers.FileHelper;
 import org.ligi.androidhelper.helpers.FragmentHelper;
 import org.ligi.androidhelper.helpers.IntentHelper;
 import org.ligi.androidhelper.helpers.URLHelper;
+import org.ligi.androidhelper.helpers.ViewHelper;
 import org.ligi.androidhelper.helpers.dialog.EditTextHelper;
 
 import java.io.File;
@@ -55,5 +59,14 @@ public class AndroidHelper {
 
     public static EditTextHelper at(EditText editText) {
         return new EditTextHelper(editText);
+    }
+
+    public static ContextHelper at(Context ctx) {
+        return new ContextHelper(ctx);
+    }
+
+
+    public static ViewHelper at(View view) {
+        return new ViewHelper(view);
     }
 }
