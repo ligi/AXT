@@ -6,9 +6,10 @@ import android.content.Context;
  * Created by ligi on 6/23/13.
  */
 public class ContextHelper {
-    private Context ctx;
+
+    private final Context ctx;
 
     public ContextHelper(Context ctx) {
-        ctx=ctx;
+        this.ctx=ctx;
     }
 }

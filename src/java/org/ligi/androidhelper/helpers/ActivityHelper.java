@@ -7,7 +7,7 @@ import android.view.View;
 
 public class ActivityHelper extends ContextHelper {
 
-    private Activity mActivity;
+    private final Activity mActivity;
 
     public ActivityHelper(Activity activity) {
         super (activity);

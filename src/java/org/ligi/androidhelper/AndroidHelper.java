@@ -19,7 +19,7 @@ import org.ligi.androidhelper.helpers.FragmentHelper;
 import org.ligi.androidhelper.helpers.IntentHelper;
 import org.ligi.androidhelper.helpers.URLHelper;
 import org.ligi.androidhelper.helpers.ViewHelper;
-import org.ligi.androidhelper.helpers.dialog.EditTextHelper;
+import org.ligi.androidhelper.helpers.EditTextHelper;
 
 import java.io.File;
 import java.net.URL;

@@ -7,7 +7,7 @@ import android.widget.CompoundButton;
 
 public class CheckBoxHelper {
 
-    private CheckBox mCheckBox;
+    private final CheckBox mCheckBox;
 
     public CheckBoxHelper(CheckBox checkBox) {
         mCheckBox=checkBox;

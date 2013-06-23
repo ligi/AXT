@@ -1,7 +1,8 @@
 package org.ligi.androidhelper.helpers;
 
 public class ArrayHelper<T> {
-    private T[] arr;
+
+    private final T[] arr;
 
     public ArrayHelper(T[] arr) {
         this.arr = arr;

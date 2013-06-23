@@ -4,7 +4,7 @@ import android.app.Fragment;
 
 public class FragmentHelper {
 
-    private Fragment mFragment;
+    private final Fragment mFragment;
 
     public FragmentHelper(Fragment fragment) {
         mFragment=fragment;

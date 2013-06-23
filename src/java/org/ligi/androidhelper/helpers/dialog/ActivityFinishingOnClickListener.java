@@ -6,7 +6,7 @@ import android.content.DialogInterface.OnClickListener;
 
 public class ActivityFinishingOnClickListener implements OnClickListener {
 
-	private Activity activity2finish;
+	private final Activity activity2finish;
 	
 	public ActivityFinishingOnClickListener(
             Activity activity2finish) {

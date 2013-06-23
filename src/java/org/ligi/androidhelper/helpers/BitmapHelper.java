@@ -6,7 +6,7 @@ import android.view.View;
 
 public class BitmapHelper {
 
-    private Bitmap mBitmap;
+    private final Bitmap mBitmap;
 
     public BitmapHelper(Bitmap bitmap) {
         mBitmap = bitmap;

@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class URLHelper {
+
     private final URL url;
 
     public URLHelper(URL url) {

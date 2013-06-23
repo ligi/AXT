@@ -8,7 +8,7 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 
 public class FileHelper {
-    private File file;
+    private final File file;
 
     public FileHelper(File file) {
         this.file = file;

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 
 public class IntentHelper {
+
     private final Intent intent;
 
     public IntentHelper(Intent intent) {

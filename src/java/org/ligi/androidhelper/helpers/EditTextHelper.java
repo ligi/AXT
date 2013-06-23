@@ -1,4 +1,4 @@
-package org.ligi.androidhelper.helpers.dialog;
+package org.ligi.androidhelper.helpers;
 
 import android.widget.EditText;
 
@@ -8,7 +8,6 @@ import android.widget.EditText;
 public class EditTextHelper {
 
     private final EditText mEditText;
-
 
     public EditTextHelper(EditText editText) {
         mEditText = editText;
