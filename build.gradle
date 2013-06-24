@@ -18,6 +18,8 @@ sourceSets {
 }
 
 version = '0.11'
+targetCompatibility = '1.6'
+sourceCompatibility = '1.6'
 
 javarob {
     packageName = 'org.ligi.androidhelper'
