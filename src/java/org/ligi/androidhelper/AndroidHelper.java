@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.CheckBox;
@@ -17,6 +18,7 @@ import org.ligi.androidhelper.helpers.ContextHelper;
 import org.ligi.androidhelper.helpers.FileHelper;
 import org.ligi.androidhelper.helpers.FragmentHelper;
 import org.ligi.androidhelper.helpers.IntentHelper;
+import org.ligi.androidhelper.helpers.ResolveInfoHelper;
 import org.ligi.androidhelper.helpers.URLHelper;
 import org.ligi.androidhelper.helpers.ViewHelper;
 import org.ligi.androidhelper.helpers.EditTextHelper;
@@ -68,5 +70,9 @@ public class AndroidHelper {
 
     public static ViewHelper at(View view) {
         return new ViewHelper(view);
+    }
+
+    public static ResolveInfoHelper at(ResolveInfo resolveInfo) {
+        return new ResolveInfoHelper(resolveInfo);
     }
 }
