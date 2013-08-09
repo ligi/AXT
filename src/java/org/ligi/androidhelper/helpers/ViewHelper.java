@@ -23,7 +23,7 @@ public class ViewHelper {
         if (imm != null) {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         } else {
-            Log.w("AndroidHelper","could not hide Keyboard as INPUT_METHOD_SERVICE is not available");
+            Log.w("AndroidHelper", "could not hide Keyboard as INPUT_METHOD_SERVICE is not available");
         }
     }
 

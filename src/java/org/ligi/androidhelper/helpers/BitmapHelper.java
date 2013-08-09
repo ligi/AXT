@@ -6,10 +6,10 @@ import android.view.View;
 
 public class BitmapHelper {
 
-    private final Bitmap mBitmap;
+    private final Bitmap bitmap;
 
     public BitmapHelper(Bitmap bitmap) {
-        mBitmap = bitmap;
+        this.bitmap = bitmap;
     }
 
     /**
@@ -27,21 +27,21 @@ public class BitmapHelper {
         float x_scale, y_scale;
         if (y_scale_ != 0f)
             // take the given y scale
-            y_scale = (view.getHeight() * y_scale_) / mBitmap.getHeight();
+            y_scale = (view.getHeight() * y_scale_) / bitmap.getHeight();
         else
             // take x_scale
-            y_scale = (view.getWidth() * x_scale_) / mBitmap.getWidth();
+            y_scale = (view.getWidth() * x_scale_) / bitmap.getWidth();
 
         if (x_scale_ != 0f)
             // take the given x scale
-            x_scale = (view.getWidth() * x_scale_) / mBitmap.getWidth();
+            x_scale = (view.getWidth() * x_scale_) / bitmap.getWidth();
         else
             // take the given y scale
-            x_scale = (view.getHeight() * y_scale_) / mBitmap.getHeight();
+            x_scale = (view.getHeight() * y_scale_) / bitmap.getHeight();
 
         matrix.postScale(x_scale, y_scale);
 
-        return Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), matrix, true);
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
 
 }

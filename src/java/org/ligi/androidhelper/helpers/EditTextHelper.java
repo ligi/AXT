@@ -2,14 +2,12 @@ package org.ligi.androidhelper.helpers;
 
 import android.widget.EditText;
 
-/**
- * Created by ligi on 6/20/13.
- */
-public class EditTextHelper {
+public class EditTextHelper extends ViewHelper{
 
     private final EditText mEditText;
 
     public EditTextHelper(EditText editText) {
+        super(editText);
         mEditText = editText;
     }
 

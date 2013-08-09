@@ -5,12 +5,13 @@ import android.content.SharedPreferences;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-public class CheckBoxHelper {
+public class CheckBoxHelper extends ViewHelper {
 
-    private final CheckBox mCheckBox;
+    private final CheckBox checkBox;
 
     public CheckBoxHelper(CheckBox checkBox) {
-        mCheckBox=checkBox;
+        super(checkBox);
+        this.checkBox =checkBox;
     }
 
     /**
@@ -19,11 +20,11 @@ public class CheckBoxHelper {
      * @param tag - setting is bound to tag - same tag same setting
      */
     public void careForCheckedStatePersistence(final String tag) {
-        final SharedPreferences mSharedPrefs = mCheckBox.getContext().getSharedPreferences("ui_state", Context.MODE_WORLD_READABLE);
+        final SharedPreferences mSharedPrefs = checkBox.getContext().getSharedPreferences("ui_state", Context.MODE_WORLD_READABLE);
 
-        mCheckBox.setChecked(mSharedPrefs.getBoolean(tag, mCheckBox.isChecked()));
+        checkBox.setChecked(mSharedPrefs.getBoolean(tag, checkBox.isChecked()));
 
-        mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mSharedPrefs.edit().putBoolean(tag, isChecked).commit();
