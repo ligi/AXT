@@ -13,7 +13,6 @@ buildscript {
 
 configurations {
     provided
-    foo
 }
 
 sourceSets {
@@ -24,7 +23,7 @@ sourceSets {
     }
 }
 
-version = '0.16'
+version = '0.17'
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
