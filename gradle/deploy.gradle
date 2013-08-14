@@ -1,14 +1,15 @@
-apply plugin : 'maven'
+apply plugin: 'maven'
 
 uploadArchives {
     repositories {
         mavenDeployer {
 
             repository(url: "file://localhost/home/ligi/git/ligis-mvn-repo/")
-	    pom.groupId='org.ligi'
-	    pom.artifactId='AndroidHelper'
+            pom.groupId = 'org.ligi'
+            pom.artifactId = 'AndroidHelper'
         }
     }
 }
+
 
 
