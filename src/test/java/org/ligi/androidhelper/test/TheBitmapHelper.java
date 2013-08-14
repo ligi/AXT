@@ -7,14 +7,15 @@ import org.junit.runner.RunWith;
 import org.ligi.androidhelper.AndroidHelper;
 import org.robolectric.RobolectricTestRunner;
 
+import static junit.framework.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(RobolectricTestRunner.class)
-public class BitmapHelperTest {
+public class TheBitmapHelper {
 
     @Test
-    public void testProperScaling() {
+    public void should_scale_correct() {
         View v=mock(View.class);
 
         when(v.getHeight()).thenReturn(50);
@@ -25,6 +26,6 @@ public class BitmapHelperTest {
         Bitmap scaledBitmap = AndroidHelper.at(origBitmap).scaleRelative2View(v, 1f, 0f);
 
         // TODO check whats going on here - smells as robolectric is not able to do the scaling part atm
-        // assertEquals(v.getHeight(),scaledBitmap.getHeight());
+        //assertEquals(v.getHeight(),scaledBitmap.getHeight());
     }
 }

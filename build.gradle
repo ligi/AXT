@@ -23,7 +23,7 @@ sourceSets {
     }
 }
 
-version = '0.17'
+version = '0.18'
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
@@ -34,7 +34,8 @@ javarob {
 
 test {
     scanForTestClasses = false
-    include "**/*Test.class"
+    include "**/The*.class"
+    exclude '**/*$*' //exclude inner classes
 }
 
 repositories {
@@ -43,7 +44,7 @@ repositories {
 
 test {
     afterTest { desc, result ->
-        println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+        println "Testing ${desc.className} ${desc.name} -> ${result.resultType}"
     }
 }
 

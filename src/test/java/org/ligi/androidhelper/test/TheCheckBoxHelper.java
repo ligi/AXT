@@ -10,17 +10,17 @@ import org.robolectric.RobolectricTestRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(RobolectricTestRunner.class)
-public class CheckBoxHelperTest {
+public class TheCheckBoxHelper {
 
     @Test
-    public void checkIfCheckBoxesSync() {
+    public void should_sync() {
 
-        CheckBox checkBox1 = new CheckBox(Robolectric.application.getApplicationContext());
+        CheckBox checkBox1 = new CheckBox(Robolectric.application);
 
         AndroidHelper.at(checkBox1).careForCheckedStatePersistence("SAME_TAG");
         checkBox1.setChecked(true);
 
-        CheckBox checkBox2 = new CheckBox(Robolectric.application.getApplicationContext());
+        CheckBox checkBox2 = new CheckBox(Robolectric.application);
         checkBox2.setChecked(false);
 
         AndroidHelper.at(checkBox2).careForCheckedStatePersistence("SAME_TAG");
