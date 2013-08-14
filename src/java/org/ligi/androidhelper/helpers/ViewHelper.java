@@ -2,6 +2,7 @@ package org.ligi.androidhelper.helpers;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -26,5 +27,15 @@ public class ViewHelper {
             Log.w("AndroidHelper", "could not hide Keyboard as INPUT_METHOD_SERVICE is not available");
         }
     }
+
+    public void startIntentOnClick(final Intent intent) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.getContext().startActivity(intent);
+            }
+        });
+    }
+
 
 }
