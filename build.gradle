@@ -23,7 +23,7 @@ sourceSets {
     }
 }
 
-version = '0.19'
+version = '0.20'
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
@@ -68,3 +68,6 @@ idea {
         scopes .PROVIDED.plus += configurations.provided
     }
 }
+
+
+group="org.ligi"
