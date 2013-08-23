@@ -32,4 +32,21 @@ public class FileHelper {
 
     }
 
+    public boolean deleteRecursive() {
+        if (!file.isDirectory()) {
+            return false;
+        }
+
+        for (String child:file.list()) {
+            File temp = new File(file, child);
+            if (temp.isDirectory()) {
+                deleteRecursive();
+            } else {
+                temp.delete();
+            }
+        }
+
+        return file.delete();
+
+    }
 }
