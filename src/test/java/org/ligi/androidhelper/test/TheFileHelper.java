@@ -12,13 +12,12 @@ import java.io.IOException;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.fest.assertions.Fail.fail;
-import static org.mockito.Mockito.mock;
 
 @RunWith(RobolectricTestRunner.class)
 public class TheFileHelper {
 
-    private File EXT_DIR=Environment.getExternalStorageDirectory();
-    private String DEFAULT_DIR ="foo_dir ";
+    private File EXT_DIR = Environment.getExternalStorageDirectory();
+    private String DEFAULT_DIR = "foo_dir ";
 
     @Test
     public void delete_recursive_should_behave_correct_when_no_dir_there() {
@@ -48,7 +47,7 @@ public class TheFileHelper {
 
     @Test
     public void delete_recursive_should_delete_dirs_recursively() {
-        File testDir = new File(EXT_DIR, DEFAULT_DIR+"/"+DEFAULT_DIR);
+        File testDir = new File(EXT_DIR, DEFAULT_DIR + "/" + DEFAULT_DIR);
         testDir.mkdirs();
 
         // should exist now
@@ -62,7 +61,7 @@ public class TheFileHelper {
 
     @Test
     public void read_write_file_cycle_should_keep_data() {
-        File testFile = new File(EXT_DIR, DEFAULT_DIR+".txt");
+        File testFile = new File(EXT_DIR, DEFAULT_DIR + ".txt");
 
         AndroidHelper.at(testFile).writeString("SAMPLE");
 
@@ -74,4 +73,4 @@ public class TheFileHelper {
     }
 
 
-    }
+}
