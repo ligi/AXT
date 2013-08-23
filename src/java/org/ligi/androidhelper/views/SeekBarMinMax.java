@@ -8,11 +8,16 @@ import android.widget.SeekBar;
  */
 public class SeekBarMinMax extends SeekBar {
 
-	private int min=0;
+	private final int min;
 
 	public SeekBarMinMax(Context context,int min,int max) {
-		super(context);
-		this.min=min;
+        super(context);
+
+        if (min>max) {
+            throw new IllegalArgumentException("max must be bigger than min for SeegBarMinMax");
+        }
+
+        this.min=min;
 		this.setMax(max-min);
 	}
 	
