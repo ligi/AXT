@@ -2,6 +2,7 @@ package org.ligi.androidhelper.helpers;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -30,6 +31,17 @@ public class FileHelper {
             stream.close();
         }
 
+    }
+
+    public boolean writeString(String string) {
+        try {
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(string);
+            fileWriter.close();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     public boolean deleteRecursive() {
