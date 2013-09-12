@@ -3,7 +3,7 @@ package org.ligi.androidhelper.test;
 import android.widget.CheckBox;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.ligi.androidhelper.AndroidHelper;
+import org.ligi.androidhelper.AXT;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
@@ -17,13 +17,13 @@ public class TheCheckBoxHelper {
 
         CheckBox checkBox1 = new CheckBox(Robolectric.application);
 
-        AndroidHelper.at(checkBox1).careForCheckedStatePersistence("SAME_TAG");
+        AXT.at(checkBox1).careForCheckedStatePersistence("SAME_TAG");
         checkBox1.setChecked(true);
 
         CheckBox checkBox2 = new CheckBox(Robolectric.application);
         checkBox2.setChecked(false);
 
-        AndroidHelper.at(checkBox2).careForCheckedStatePersistence("SAME_TAG");
+        AXT.at(checkBox2).careForCheckedStatePersistence("SAME_TAG");
 
         assertEquals(checkBox1.isChecked(), checkBox2.isChecked());
 

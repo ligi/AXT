@@ -28,7 +28,7 @@ import org.ligi.androidhelper.helpers.EditTextHelper;
 import java.io.File;
 import java.net.URL;
 
-public class AndroidHelper {
+public class AXT {
     public static CheckBoxHelper at(CheckBox checkBox) {
         return new CheckBoxHelper(checkBox);
     }

@@ -5,7 +5,7 @@ import android.widget.EditText;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.ligi.androidhelper.AndroidHelper;
+import org.ligi.androidhelper.AXT;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
@@ -21,7 +21,7 @@ public class TheEditTextHelper {
 
         EditText editText = new EditText(Robolectric.application);
 
-        AndroidHelper.at(editText).changeTextIfNeeded(TEXT2SET);
+        AXT.at(editText).changeTextIfNeeded(TEXT2SET);
 
         assertEquals(editText.getText().toString(),TEXT2SET);
     }
@@ -52,7 +52,7 @@ public class TheEditTextHelper {
             }
         });
 
-        AndroidHelper.at(editText).changeTextIfNeeded(TEXT2SET);
+        AXT.at(editText).changeTextIfNeeded(TEXT2SET);
 
     }
 }

@@ -23,14 +23,11 @@ public class FileHelper {
      */
     public String loadToString() throws IOException {
         FileInputStream stream = new FileInputStream(file);
-        try {
-            FileChannel fc = stream.getChannel();
-            MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
-            return Charset.defaultCharset().decode(bb).toString();
-        } finally {
-            stream.close();
-        }
-
+        FileChannel fc = stream.getChannel();
+        MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
+        fc.close();
+        stream.close();
+        return Charset.defaultCharset().decode(bb).toString();
     }
 
     public boolean writeString(String string) {

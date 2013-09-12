@@ -4,7 +4,7 @@ import android.os.Environment;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.ligi.androidhelper.AndroidHelper;
+import org.ligi.androidhelper.AXT;
 import org.robolectric.RobolectricTestRunner;
 
 import java.io.File;
@@ -26,7 +26,7 @@ public class TheFileHelper {
         assertThat(testDir.exists()).isEqualTo(false);
 
         // invoke and check return code
-        assertThat(AndroidHelper.at(testDir).deleteRecursive()).isEqualTo(false);
+        assertThat(AXT.at(testDir).deleteRecursive()).isEqualTo(false);
     }
 
 
@@ -39,7 +39,7 @@ public class TheFileHelper {
         assertThat(testDir.exists()).isEqualTo(true);
 
         // invoke and check return code
-        assertThat(AndroidHelper.at(testDir).deleteRecursive()).isEqualTo(true);
+        assertThat(AXT.at(testDir).deleteRecursive()).isEqualTo(true);
 
         assertThat(testDir.exists()).isEqualTo(false);
     }
@@ -54,7 +54,7 @@ public class TheFileHelper {
         assertThat(testDir.exists()).isEqualTo(true);
 
         // invoke and check return code
-        assertThat(AndroidHelper.at(testDir).deleteRecursive()).isEqualTo(true);
+        assertThat(AXT.at(testDir).deleteRecursive()).isEqualTo(true);
 
         assertThat(testDir.exists()).isEqualTo(false);
     }
@@ -63,10 +63,10 @@ public class TheFileHelper {
     public void read_write_file_cycle_should_keep_data() {
         File testFile = new File(EXT_DIR, DEFAULT_DIR + ".txt");
 
-        AndroidHelper.at(testFile).writeString("SAMPLE");
+        AXT.at(testFile).writeString("SAMPLE");
 
         try {
-            assertThat(AndroidHelper.at(testFile).loadToString()).isEqualTo("SAMPLE");
+            assertThat(AXT.at(testFile).loadToString()).isEqualTo("SAMPLE");
         } catch (IOException e) {
             fail("the file should be loadable");
         }

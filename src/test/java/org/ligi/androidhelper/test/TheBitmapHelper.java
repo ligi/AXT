@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.view.View;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.ligi.androidhelper.AndroidHelper;
+import org.ligi.androidhelper.AXT;
 import org.robolectric.RobolectricTestRunner;
 
 import static junit.framework.Assert.assertEquals;
@@ -23,7 +23,7 @@ public class TheBitmapHelper {
 
         Bitmap origBitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
 
-        Bitmap scaledBitmap = AndroidHelper.at(origBitmap).scaleRelative2View(v, 1f, 0f);
+        Bitmap scaledBitmap = AXT.at(origBitmap).scaleRelative2View(v, 1f, 0f);
 
         // TODO check whats going on here - smells as robolectric is not able to do the scaling part atm
         //assertEquals(v.getHeight(),scaledBitmap.getHeight());
