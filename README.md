@@ -1,11 +1,16 @@
 [![Build Status](https://ligi.ci.cloudbees.com/job/AXT/badge/icon)](https://ligi.ci.cloudbees.com/job/AXT/)
 
-The goal of this project is to provide code that is used in a lot of Android-Apps over and over again and this way:
 
- * shorten code in the apps ( and make them more readable this way )
- * deduplicate code and	    tests
+Why?
+====
 
-This library is released under MIT license. Feel free to use it. Pull requests are welcome.
+The aim of this project is to provide code that is used in a lot of Android-Apps over and over again this way:
+
+ * reduce code in the apps ( -> more readable )
+ * deduplicate code and	tests ( -> save space & time )
+
+How?
+===
 
 You can either [download the jar](https://ligi.ci.cloudbees.com/job/AXT/lastSuccessfulBuild/artifact/build/libs/) and use it - or pull the lib via maven - this is how this is done in gradle:
 
@@ -31,3 +36,16 @@ most helpers are invoked that way
  // invoke AXT
  AXT.at(editText).changeTextIfNeeded("new text?");
 ```
+
+Why the Name?
+=============
+
+the acronymes comes from **A**ndroid e**XT**ensions and also leaned torwards dagger and butterknife that aim on reducing code in android apps - AXT is german for AXE - so also a cutting instrument.
+
+
+Terms
+=====
+
+
+This library is released under MIT license. Feel free to use it. Pull requests are welcome.
+
