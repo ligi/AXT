@@ -6,7 +6,7 @@ uploadArchives {
 
             repository(url: "file://localhost/home/ligi/git/ligis-mvn-repo/")
             pom.groupId = 'org.ligi'
-            pom.artifactId = 'AndroidHelper'
+            pom.artifactId = 'AXT'
         }
     }
 }

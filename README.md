@@ -1,4 +1,4 @@
-[![Build Status](https://ligi.ci.cloudbees.com/job/AndroidHelper/badge/icon)](https://ligi.ci.cloudbees.com/job/AndroidHelper/)
+[![Build Status](https://ligi.ci.cloudbees.com/job/AXT/badge/icon)](https://ligi.ci.cloudbees.com/job/AXT/)
 
 The goal of this project is to provide code that is used in a lot of Android-Apps over and over again and this way:
 
@@ -7,7 +7,7 @@ The goal of this project is to provide code that is used in a lot of Android-App
 
 This library is released under MIT license. Feel free to use it. Pull requests are welcome.
 
-You can either [download the jar](https://ligi.ci.cloudbees.com/job/AndroidHelp\er/lastSuccessfulBuild/artifact/build/libs/) and use it - or pull the lib via maven - this is how this is done in gradle:
+You can either [download the jar](https://ligi.ci.cloudbees.com/job/AXT/lastSuccessfulBuild/artifact/build/libs/) and use it - or pull the lib via maven - this is how this is done in gradle:
 
 ```groovy
 repositories {
@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.ligi:AndroidHelper:0.20'
+    compile 'org.ligi:AXT:0.20'
 }
 
 ```
@@ -28,6 +28,6 @@ most helpers are invoked that way
  // context
  EditText editText = getEditText();
  
- // invoke AndroidHelper
- AndroidHelper.at(editText).changeTextIfNeeded("new text?");
+ // invoke AXT
+ AXT.at(editText).changeTextIfNeeded("new text?");
 ```
