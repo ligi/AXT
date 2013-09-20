@@ -47,16 +47,18 @@ public class TheFileHelper {
 
     @Test
     public void delete_recursive_should_delete_dirs_recursively() {
-        File testDir = new File(EXT_DIR, DEFAULT_DIR + "/" + DEFAULT_DIR);
-        testDir.mkdirs();
+        File testDirDeep = new File(EXT_DIR, DEFAULT_DIR + "/" + DEFAULT_DIR + "/"+DEFAULT_DIR);
+        testDirDeep.mkdirs();
+
+        File testDir2Remove = new File(EXT_DIR, DEFAULT_DIR);
 
         // should exist now
-        assertThat(testDir.exists()).isEqualTo(true);
+        assertThat(testDirDeep.exists()).isEqualTo(true);
 
         // invoke and check return code
-        assertThat(AXT.at(testDir).deleteRecursive()).isEqualTo(true);
+        assertThat(AXT.at(testDir2Remove).deleteRecursive()).isEqualTo(true);
 
-        assertThat(testDir.exists()).isEqualTo(false);
+        assertThat(testDirDeep.exists()).isEqualTo(false);
     }
 
     @Test
