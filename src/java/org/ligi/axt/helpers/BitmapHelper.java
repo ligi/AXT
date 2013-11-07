@@ -2,6 +2,7 @@ package org.ligi.axt.helpers;
 
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.view.View;
 
 public class BitmapHelper {
@@ -12,36 +13,64 @@ public class BitmapHelper {
         this.bitmap = bitmap;
     }
 
+    public Bitmap scale2maxSize(int maxSize) {
+        return null;
+    }
+
     /**
      * Scale a bitmap relative to some view.
      *
      * @param view
-     * @param x_scale_
-     * @param y_scale_
+     * @param inScaleX
+     * @param inScaleY
      * @return
      */
-    public Bitmap scaleRelative2View(View view, float x_scale_, float y_scale_) {
+    public Bitmap scaleRelative2View(View view, float inScaleX, float inScaleY) {
         // create a matrix for the manipulation
         Matrix matrix = new Matrix();
 
-        float x_scale, y_scale;
-        if (y_scale_ != 0f)
+        float outScaleX, outScaleY;
+        if (inScaleY != 0f) {
             // take the given y scale
-            y_scale = (view.getHeight() * y_scale_) / bitmap.getHeight();
-        else
-            // take x_scale
-            y_scale = (view.getWidth() * x_scale_) / bitmap.getWidth();
+            outScaleY = (view.getHeight() * inScaleY) / bitmap.getHeight();
+        } else {
+            // take outScaleX
+            outScaleY = (view.getWidth() * inScaleX) / bitmap.getWidth();
+        }
 
-        if (x_scale_ != 0f)
+        if (inScaleX != 0f) {
             // take the given x scale
-            x_scale = (view.getWidth() * x_scale_) / bitmap.getWidth();
-        else
+            outScaleX = (view.getWidth() * inScaleX) / bitmap.getWidth();
+        } else {
             // take the given y scale
-            x_scale = (view.getHeight() * y_scale_) / bitmap.getHeight();
+            outScaleX = (view.getHeight() * inScaleY) / bitmap.getHeight();
+        }
 
-        matrix.postScale(x_scale, y_scale);
+        matrix.postScale(outScaleX, outScaleY);
 
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
+
+    public Point getSizeAsPoint() {
+        return new Point(bitmap.getWidth(), bitmap.getHeight());
+    }
+
+    public Point scaleToFitMaxPixels(int maxPixels, Point point) {
+        float scale;
+        if (point.x < maxPixels && point.y < maxPixels) {
+            // nothing is over dist px -> we are good with the given value
+            scale = 1f;
+        } else {
+
+            if (point.x > point.y) {
+                scale = (float) point.x / maxPixels;
+            } else {
+                scale = (float) point.y / maxPixels;
+            }
+        }
+
+        return new Point((int) (point.x * scale), (int) (point.y * scale));
+    }
+
 
 }
