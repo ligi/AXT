@@ -22,12 +22,16 @@ public class FileHelper {
      * @throws IOException
      */
     public String loadToString() throws IOException {
+        return loadToString(Charset.defaultCharset());
+    }
+
+    public String loadToString(Charset charset) throws IOException {
         FileInputStream stream = new FileInputStream(file);
         FileChannel fc = stream.getChannel();
         MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
         fc.close();
         stream.close();
-        return Charset.defaultCharset().decode(bb).toString();
+        return charset.decode(bb).toString();
     }
 
     public boolean writeString(String string) {
