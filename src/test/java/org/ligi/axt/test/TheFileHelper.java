@@ -75,4 +75,17 @@ public class TheFileHelper {
     }
 
 
+    @Test
+    public void obj_read_write_roundtrip() throws IOException, ClassNotFoundException {
+        File testFile = new File(EXT_DIR, DEFAULT_DIR + ".obj");
+        TestSerializable in = new TestSerializable();
+        in.test = "TESTING";
+
+        AXT.at(testFile).writeObject(in);
+
+        TestSerializable out = AXT.at(testFile).loadToObject();
+        assertThat(in.test).isEqualTo(out.test);
+    }
+
+
 }

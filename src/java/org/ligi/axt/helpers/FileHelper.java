@@ -2,8 +2,13 @@ package org.ligi.axt.helpers;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
@@ -54,7 +59,7 @@ public class FileHelper {
             return false;
         }
 
-        for (String child:file2delete.list()) {
+        for (String child : file2delete.list()) {
             File temp = new File(file2delete, child);
             if (temp.isDirectory()) {
                 deleteRecursive(temp);
@@ -65,5 +70,50 @@ public class FileHelper {
 
         return file2delete.delete();
 
+
     }
+
+
+    public <T extends Serializable> T loadToObject() throws IOException, ClassNotFoundException, ClassCastException {
+
+        final ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
+        T returnClass = (T) is.readObject();
+        is.close();
+        return returnClass;
+    }
+
+
+    public <T extends Serializable> T loadToObjectOrNull() {
+        try {
+            final ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
+            T returnClass = (T) is.readObject();
+            is.close();
+            return returnClass;
+        } catch (IOException e) {
+            // causes null return
+        } catch (ClassNotFoundException e) {
+            // causes null return
+        } catch (ClassCastException e) {
+            // causes null return
+        }
+
+        return null;
+    }
+
+    public boolean writeObject(Serializable object) {
+        try {
+            final FileOutputStream fos = new FileOutputStream(file);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(object);
+            os.close();
+            return true;
+        } catch (FileNotFoundException e) {
+            // causes return false
+        } catch (IOException e) {
+            // causes return false
+        }
+        return false;
+    }
+
+
 }

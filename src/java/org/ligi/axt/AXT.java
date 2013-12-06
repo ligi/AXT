@@ -8,6 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -16,6 +17,7 @@ import org.ligi.axt.helpers.ArrayHelper;
 import org.ligi.axt.helpers.BitmapHelper;
 import org.ligi.axt.helpers.CheckBoxHelper;
 import org.ligi.axt.helpers.ContextHelper;
+import org.ligi.axt.helpers.EditTextHelper;
 import org.ligi.axt.helpers.FileHelper;
 import org.ligi.axt.helpers.FragmentHelper;
 import org.ligi.axt.helpers.IntentHelper;
@@ -23,7 +25,7 @@ import org.ligi.axt.helpers.PaintHelper;
 import org.ligi.axt.helpers.ResolveInfoHelper;
 import org.ligi.axt.helpers.URLHelper;
 import org.ligi.axt.helpers.ViewHelper;
-import org.ligi.axt.helpers.EditTextHelper;
+import org.ligi.axt.helpers.WindowManagerHelper;
 
 import java.io.File;
 import java.net.URL;
@@ -76,6 +78,10 @@ public class AXT {
 
     public static PaintHelper at(Paint paint) {
         return new PaintHelper(paint);
+    }
+
+    public static WindowManagerHelper at(WindowManager windowManager) {
+        return new WindowManagerHelper(windowManager);
     }
 
     public static ResolveInfoHelper at(ResolveInfo resolveInfo) {

@@ -24,7 +24,11 @@ public class ActivityHelper extends ContextHelper {
      * slightly modified from http://stackoverflow.com/a/8765901/322642
      */
     public void disableRotation() {
-        switch (activity.getResources().getConfiguration().orientation){
+        lockOrientation((activity.getResources().getConfiguration().orientation));
+    }
+
+    public void lockOrientation(final int orientation) {
+        switch (orientation) {
             case Configuration.ORIENTATION_PORTRAIT:
                 if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.FROYO){
                     activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
