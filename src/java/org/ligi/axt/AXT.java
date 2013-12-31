@@ -20,6 +20,7 @@ import org.ligi.axt.helpers.ContextHelper;
 import org.ligi.axt.helpers.EditTextHelper;
 import org.ligi.axt.helpers.FileHelper;
 import org.ligi.axt.helpers.FragmentHelper;
+import org.ligi.axt.helpers.InputStreamHelper;
 import org.ligi.axt.helpers.IntentHelper;
 import org.ligi.axt.helpers.PaintHelper;
 import org.ligi.axt.helpers.ResolveInfoHelper;
@@ -28,6 +29,7 @@ import org.ligi.axt.helpers.ViewHelper;
 import org.ligi.axt.helpers.WindowManagerHelper;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URL;
 
 public class AXT {
@@ -71,6 +73,9 @@ public class AXT {
         return new ContextHelper(ctx);
     }
 
+    public static InputStreamHelper at(InputStream inputStream) {
+        return new InputStreamHelper(inputStream);
+    }
 
     public static ViewHelper at(View view) {
         return new ViewHelper(view);
