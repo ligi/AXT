@@ -14,7 +14,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(RobolectricTestRunner.class)
-public class TheBitmapHelper {
+public class TheBitmapAXT {
 
     public static final int SIZE_X_PROBE = 42;
     public static final int SIZE_Y_PROBE = 100;

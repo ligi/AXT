@@ -1,6 +1,7 @@
 package org.ligi.axt.test;
 
 import android.widget.CheckBox;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.axt.AXT;
@@ -10,7 +11,7 @@ import org.robolectric.RobolectricTestRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(RobolectricTestRunner.class)
-public class TheCheckBoxHelper {
+public class TheCheckBoxAXT {
 
     @Test
     public void should_sync() {

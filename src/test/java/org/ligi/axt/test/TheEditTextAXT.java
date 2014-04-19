@@ -1,4 +1,5 @@
 package org.ligi.axt.test;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
@@ -13,8 +14,8 @@ import static junit.framework.Assert.assertEquals;
 import static org.fest.assertions.Fail.fail;
 
 @RunWith(RobolectricTestRunner.class)
-public class TheEditTextHelper {
-    private final static String TEXT2SET="foobar";
+public class TheEditTextAXT {
+    private final static String TEXT2SET = "foobar";
 
     @Test
     public void should_set_text_when_needed() {
@@ -23,7 +24,7 @@ public class TheEditTextHelper {
 
         AXT.at(editText).changeTextIfNeeded(TEXT2SET);
 
-        assertEquals(editText.getText().toString(),TEXT2SET);
+        assertEquals(editText.getText().toString(), TEXT2SET);
     }
 
 

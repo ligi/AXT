@@ -14,7 +14,7 @@ import java.io.IOException;
 import static org.fest.assertions.Assertions.assertThat;
 
 @RunWith(RobolectricTestRunner.class)
-public class TheInputStreamHelper {
+public class TheInputStreamAXT {
 
     public static final String STRING_PROBE = "132QWE";
     private File ROOT = Environment.getExternalStorageDirectory();

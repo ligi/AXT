@@ -14,7 +14,7 @@ import static org.fest.assertions.Assertions.assertThat;
 import static org.fest.assertions.Fail.fail;
 
 @RunWith(RobolectricTestRunner.class)
-public class TheFileHelper {
+public class TheFileAXT {
 
     private File EXT_DIR = Environment.getExternalStorageDirectory();
     private String DEFAULT_DIR = "foo_dir ";
@@ -47,7 +47,7 @@ public class TheFileHelper {
 
     @Test
     public void delete_recursive_should_delete_dirs_recursively() {
-        File testDirDeep = new File(EXT_DIR, DEFAULT_DIR + "/" + DEFAULT_DIR + "/"+DEFAULT_DIR);
+        File testDirDeep = new File(EXT_DIR, DEFAULT_DIR + "/" + DEFAULT_DIR + "/" + DEFAULT_DIR);
         testDirDeep.mkdirs();
 
         File testDir2Remove = new File(EXT_DIR, DEFAULT_DIR);
