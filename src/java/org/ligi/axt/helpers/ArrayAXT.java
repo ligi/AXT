@@ -1,10 +1,10 @@
 package org.ligi.axt.helpers;
 
-public class ArrayHelper<T> {
+public class ArrayAXT<T> {
 
     private final T[] arr;
 
-    public ArrayHelper(T[] arr) {
+    public ArrayAXT(T[] arr) {
         this.arr = arr;
     }
 

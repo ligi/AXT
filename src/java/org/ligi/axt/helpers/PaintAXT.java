@@ -2,11 +2,11 @@ package org.ligi.axt.helpers;
 
 import android.graphics.Paint;
 
-public class PaintHelper {
+public class PaintAXT {
 
     final Paint paint;
 
-    public PaintHelper(final Paint paint) {
+    public PaintAXT(final Paint paint) {
         this.paint = paint;
     }
 

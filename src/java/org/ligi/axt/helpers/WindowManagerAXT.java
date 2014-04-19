@@ -5,11 +5,11 @@ import android.os.Build;
 import android.view.Display;
 import android.view.WindowManager;
 
-public class WindowManagerHelper {
+public class WindowManagerAXT {
 
     private final WindowManager windowManager;
 
-    public WindowManagerHelper(WindowManager windowManager) {
+    public WindowManagerAXT(WindowManager windowManager) {
         this.windowManager = windowManager;
     }
 

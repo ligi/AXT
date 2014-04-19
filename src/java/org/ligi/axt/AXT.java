@@ -12,84 +12,84 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import org.ligi.axt.helpers.ActivityHelper;
-import org.ligi.axt.helpers.ArrayHelper;
-import org.ligi.axt.helpers.BitmapHelper;
-import org.ligi.axt.helpers.CheckBoxHelper;
-import org.ligi.axt.helpers.ContextHelper;
-import org.ligi.axt.helpers.EditTextHelper;
-import org.ligi.axt.helpers.FileHelper;
-import org.ligi.axt.helpers.FragmentHelper;
-import org.ligi.axt.helpers.InputStreamHelper;
-import org.ligi.axt.helpers.IntentHelper;
-import org.ligi.axt.helpers.PaintHelper;
-import org.ligi.axt.helpers.ResolveInfoHelper;
-import org.ligi.axt.helpers.URLHelper;
-import org.ligi.axt.helpers.ViewHelper;
-import org.ligi.axt.helpers.WindowManagerHelper;
+import org.ligi.axt.helpers.ActivityAXT;
+import org.ligi.axt.helpers.ArrayAXT;
+import org.ligi.axt.helpers.BitmapAXT;
+import org.ligi.axt.helpers.CheckBoxAXT;
+import org.ligi.axt.helpers.ContextAXT;
+import org.ligi.axt.helpers.EditTextAXT;
+import org.ligi.axt.helpers.FileAXT;
+import org.ligi.axt.helpers.FragmentAXT;
+import org.ligi.axt.helpers.InputStreamAXT;
+import org.ligi.axt.helpers.IntentAXT;
+import org.ligi.axt.helpers.PaintAXT;
+import org.ligi.axt.helpers.ResolveInfoAXT;
+import org.ligi.axt.helpers.URLAXT;
+import org.ligi.axt.helpers.ViewAXT;
+import org.ligi.axt.helpers.WindowManagerAXT;
 
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 
 public class AXT {
-    public static CheckBoxHelper at(CheckBox checkBox) {
-        return new CheckBoxHelper(checkBox);
+    public static CheckBoxAXT at(CheckBox checkBox) {
+        return new CheckBoxAXT(checkBox);
     }
 
-    public static BitmapHelper at(Bitmap bitmap) {
-        return new BitmapHelper(bitmap);
+    public static BitmapAXT at(Bitmap bitmap) {
+        return new BitmapAXT(bitmap);
     }
 
-    public static ActivityHelper at(Activity activity) {
-        return new ActivityHelper(activity);
+    public static ActivityAXT at(Activity activity) {
+        return new ActivityAXT(activity);
     }
 
-    public static FragmentHelper at(Fragment fragment) {
-        return new FragmentHelper(fragment);
+    public static FragmentAXT at(Fragment fragment) {
+        return new FragmentAXT(fragment);
     }
 
-    public static FileHelper at(File file) {
-        return new FileHelper(file);
+    public static FileAXT at(File file) {
+        return new FileAXT(file);
     }
 
-    public static <T> ArrayHelper<T> at(T[] arr) {
-        return new ArrayHelper<T>(arr);
+    public static <T> ArrayAXT<T> at(T[] arr) {
+        return new ArrayAXT<T>(arr);
     }
 
-    public static IntentHelper at(Intent intent) {
-        return new IntentHelper(intent);
+    public static IntentAXT at(Intent intent) {
+        return new IntentAXT(intent);
     }
 
-    public static URLHelper at(URL url) {
-        return new URLHelper(url);
+    public static URLAXT at(URL url) {
+        return new URLAXT(url);
     }
 
-    public static EditTextHelper at(EditText editText) {
-        return new EditTextHelper(editText);
+    public static EditTextAXT at(EditText editText) {
+        return new EditTextAXT(editText);
     }
 
-    public static ContextHelper at(Context ctx) {
-        return new ContextHelper(ctx);
+    public static ContextAXT at(Context ctx) {
+        return new ContextAXT(ctx);
     }
 
-    public static InputStreamHelper at(InputStream inputStream) {
-        return new InputStreamHelper(inputStream);
+    public static InputStreamAXT at(InputStream inputStream) {
+        return new InputStreamAXT(inputStream);
     }
 
-    public static ViewHelper at(View view) {
-        return new ViewHelper(view);
+    public static ViewAXT at(View view) {
+        return new ViewAXT(view);
     }
 
-    public static PaintHelper at(Paint paint) {
-        return new PaintHelper(paint);
+    public static PaintAXT at(Paint paint) {
+        return new PaintAXT(paint);
     }
 
-    public static WindowManagerHelper at(WindowManager windowManager) {
-        return new WindowManagerHelper(windowManager);
+    public static WindowManagerAXT at(WindowManager windowManager) {
+        return new WindowManagerAXT(windowManager);
     }
 
-    public static ResolveInfoHelper at(ResolveInfo resolveInfo) {
-        return new ResolveInfoHelper(resolveInfo);
+    public static ResolveInfoAXT at(ResolveInfo resolveInfo) {
+        return new ResolveInfoAXT(resolveInfo);
     }
 }

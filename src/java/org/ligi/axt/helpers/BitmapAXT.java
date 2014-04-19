@@ -5,11 +5,11 @@ import android.graphics.Matrix;
 import android.graphics.Point;
 import android.view.View;
 
-public class BitmapHelper {
+public class BitmapAXT {
 
     private final Bitmap bitmap;
 
-    public BitmapHelper(Bitmap bitmap) {
+    public BitmapAXT(Bitmap bitmap) {
         this.bitmap = bitmap;
     }
 

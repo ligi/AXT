@@ -2,11 +2,11 @@ package org.ligi.axt.helpers;
 
 import android.widget.EditText;
 
-public class EditTextHelper extends ViewHelper{
+public class EditTextAXT extends ViewAXT {
 
     private final EditText mEditText;
 
-    public EditTextHelper(EditText editText) {
+    public EditTextAXT(EditText editText) {
         super(editText);
         mEditText = editText;
     }

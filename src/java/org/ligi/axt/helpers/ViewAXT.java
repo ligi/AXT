@@ -7,11 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-public class ViewHelper {
+public class ViewAXT {
 
     private final View view;
 
-    public ViewHelper(View view) {
+    public ViewAXT(View view) {
         this.view = view;
     }
 

@@ -5,11 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class InputStreamHelper {
+public class InputStreamAXT {
 
     private final InputStream inputStream;
 
-    public InputStreamHelper(InputStream inputStream) {
+    public InputStreamAXT(InputStream inputStream) {
         this.inputStream = inputStream;
     }
 

@@ -13,10 +13,10 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 
-public class FileHelper {
+public class FileAXT {
     private final File file;
 
-    public FileHelper(File file) {
+    public FileAXT(File file) {
         this.file = file;
     }
 

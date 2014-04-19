@@ -3,11 +3,11 @@ package org.ligi.axt.helpers;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
-public class IntentHelper {
+public class IntentAXT {
 
     private final Intent intent;
 
-    public IntentHelper(Intent intent) {
+    public IntentAXT(Intent intent) {
         this.intent = intent;
     }
 

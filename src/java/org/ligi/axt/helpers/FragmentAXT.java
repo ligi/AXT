@@ -2,12 +2,12 @@ package org.ligi.axt.helpers;
 
 import android.app.Fragment;
 
-public class FragmentHelper {
+public class FragmentAXT {
 
     private final Fragment mFragment;
 
-    public FragmentHelper(Fragment fragment) {
-        mFragment=fragment;
+    public FragmentAXT(Fragment fragment) {
+        mFragment = fragment;
     }
 
     public <T> T findById(int id) {

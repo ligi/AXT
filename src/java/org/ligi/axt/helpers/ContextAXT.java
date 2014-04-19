@@ -6,11 +6,11 @@ import android.view.ViewConfiguration;
 
 import java.lang.reflect.Field;
 
-public class ContextHelper {
+public class ContextAXT {
 
     private final Context context;
 
-    public ContextHelper(Context context) {
+    public ContextAXT(Context context) {
         this.context = context;
     }
 
@@ -20,12 +20,12 @@ public class ContextHelper {
     }
 
     /**
-    * a little hack because I strongly disagree with the style guide here
-    * ;-)
-    * not having the Actionbar overfow menu also with devices with hardware
-    * key really helps discoverability
-    * http://stackoverflow.com/questions/9286822/how-to-force-use-of-overflow-menu-on-devices-with-menu-button
-    **/
+     * a little hack because I strongly disagree with the style guide here
+     * ;-)
+     * not having the Actionbar overfow menu also with devices with hardware
+     * key really helps discoverability
+     * http://stackoverflow.com/questions/9286822/how-to-force-use-of-overflow-menu-on-devices-with-menu-button
+     */
     public void forceOverFlowMenuEvenThoughDeviceHasPhysical() {
 
         try {

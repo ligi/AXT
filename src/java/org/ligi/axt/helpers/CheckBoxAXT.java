@@ -5,13 +5,13 @@ import android.content.SharedPreferences;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-public class CheckBoxHelper extends ViewHelper {
+public class CheckBoxAXT extends ViewAXT {
 
     private final CheckBox checkBox;
 
-    public CheckBoxHelper(CheckBox checkBox) {
+    public CheckBoxAXT(CheckBox checkBox) {
         super(checkBox);
-        this.checkBox =checkBox;
+        this.checkBox = checkBox;
     }
 
     /**

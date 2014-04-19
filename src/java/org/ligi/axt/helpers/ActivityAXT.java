@@ -5,11 +5,11 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.view.View;
 
-public class ActivityHelper extends ContextHelper {
+public class ActivityAXT extends ContextAXT {
 
     private final Activity activity;
 
-    public ActivityHelper(Activity activity) {
+    public ActivityAXT(Activity activity) {
         super (activity);
         this.activity =activity;
     }
