@@ -37,6 +37,24 @@ public class ViewAXT {
         }
     }
 
+    /**
+     * @param visible - when true view is set to VISIBLE - if false GONE
+     */
+    public void setVisibility(boolean visible) {
+        setVisibility(visible, View.GONE);
+    }
+
+    /**
+     * @param visible - when true view is set to VISIBLE - if false to @param hiddenVisibility
+     */
+    public void setVisibility(boolean visible, int hiddenVisibility) {
+        if (visible) {
+            view.setVisibility(View.VISIBLE);
+        } else {
+            view.setVisibility(hiddenVisibility);
+        }
+    }
+
     public void startIntentOnClick(final Intent intent) {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
