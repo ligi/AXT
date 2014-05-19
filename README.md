@@ -40,7 +40,7 @@ most helpers are invoked that way
 Why the Name?
 =============
 
-the acronymes comes from **A**ndroid e<b>XT</b>ensions and also leaned torwards dagger and butterknife that aim on reducing code in android apps - AXT is german for AXE - so also a cutting instrument.
+the acronymes comes from <b>A</b>ndroid e<b>XT</b>ensions and also leaned torwards dagger and butterknife that aim on reducing code in android apps - AXT is german for AXE - so also a cutting tool.
 
 
 Terms
