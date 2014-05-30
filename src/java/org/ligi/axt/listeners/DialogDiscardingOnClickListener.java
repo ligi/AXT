@@ -13,7 +13,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,                                                  
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA                                                                    
  */
-package org.ligi.axt.helpers.dialog;
+package org.ligi.axt.listeners;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;

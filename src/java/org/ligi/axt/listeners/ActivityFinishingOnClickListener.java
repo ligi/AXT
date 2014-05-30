@@ -1,4 +1,4 @@
-package org.ligi.axt.helpers.dialog;
+package org.ligi.axt.listeners;
 
 import android.app.Activity;
 import android.content.DialogInterface;
