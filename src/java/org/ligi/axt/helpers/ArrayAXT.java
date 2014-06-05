@@ -18,4 +18,8 @@ public class ArrayAXT<T> {
         System.arraycopy(arr2, 0, result, alen, blen);
         return result;
     }
+
+    public T last() {
+        return arr[arr.length - 1];
+    }
 }

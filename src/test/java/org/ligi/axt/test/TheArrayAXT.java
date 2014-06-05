@@ -3,6 +3,7 @@ package org.ligi.axt.test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.axt.AXT;
+import org.ligi.axt.helpers.ArrayAXT;
 import org.robolectric.RobolectricTestRunner;
 
 import static org.fest.assertions.Assertions.assertThat;
@@ -39,4 +40,18 @@ public class TheArrayAXT {
         assertThat(test).isEqualTo(new String[]{"lol"});
     }
 
+    @Test
+    public void returns_last_element_correctly_with_other_elements() {
+        ArrayAXT tested = AXT.at(new String[]{"lol", "foo", "last"});
+
+        assertThat(tested.last()).isEqualTo("last");
+    }
+
+
+    @Test
+    public void returns_last_element_correctly_when_the_only() {
+        ArrayAXT tested = AXT.at(new String[]{"last"});
+
+        assertThat(tested.last()).isEqualTo("last");
+    }
 }
