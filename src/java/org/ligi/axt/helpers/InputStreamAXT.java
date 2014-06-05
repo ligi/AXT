@@ -1,9 +1,11 @@
 package org.ligi.axt.helpers;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class InputStreamAXT {
 
@@ -23,5 +25,19 @@ public class InputStreamAXT {
             fos.write(buffer, 0, len);
         }
 
+    }
+
+    public String readToString() throws IOException {
+        InputStreamReader is = new InputStreamReader(inputStream);
+        StringBuilder sb = new StringBuilder();
+        BufferedReader br = new BufferedReader(is);
+        String read = br.readLine();
+
+        while (read != null) {
+            sb.append(read);
+            read = br.readLine();
+        }
+
+        return sb.toString();
     }
 }
