@@ -68,7 +68,7 @@ public class TheFileAXT {
         AXT.at(testFile).writeString("SAMPLE");
 
         try {
-            assertThat(AXT.at(testFile).loadToString()).isEqualTo("SAMPLE");
+            assertThat(AXT.at(testFile).readToString()).isEqualTo("SAMPLE");
         } catch (IOException e) {
             fail("the file should be loadable");
         }

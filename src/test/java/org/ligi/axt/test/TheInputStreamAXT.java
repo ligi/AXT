@@ -25,7 +25,7 @@ public class TheInputStreamAXT {
 
         AXT.at(new StringInputStream(STRING_PROBE)).toFile(file);
 
-        assertThat(STRING_PROBE).isEqualTo(AXT.at(file).loadToString());
+        assertThat(STRING_PROBE).isEqualTo(AXT.at(file).readToString());
     }
 
 }
