@@ -1,8 +1,9 @@
 package org.ligi.axt.helpers;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.ViewConfiguration;
+
+import org.ligi.axt.helpers.misc.CommonIntentStarter;
 
 import java.lang.reflect.Field;
 
@@ -12,11 +13,6 @@ public class ContextAXT {
 
     public ContextAXT(Context context) {
         this.context = context;
-    }
-
-    public void startActivityForClass(Class class2start) {
-        Intent intent = new Intent(context, class2start);
-        context.startActivity(intent);
     }
 
     /**
@@ -38,5 +34,9 @@ public class ContextAXT {
         } catch (Exception ex) {
             // Ignore - but at least we tried ;-)
         }
+    }
+
+    public CommonIntentStarter startCommonIntent() {
+        return new CommonIntentStarter(context);
     }
 }
