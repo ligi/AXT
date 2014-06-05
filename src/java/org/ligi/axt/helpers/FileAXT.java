@@ -26,11 +26,11 @@ public class FileAXT {
      * @return the content of the file
      * @throws IOException
      */
-    public String loadToString() throws IOException {
-        return loadToString(Charset.defaultCharset());
+    public String readToString() throws IOException {
+        return readToString(Charset.defaultCharset());
     }
 
-    public String loadToString(Charset charset) throws IOException {
+    public String readToString(Charset charset) throws IOException {
         FileInputStream stream = new FileInputStream(file);
         FileChannel fc = stream.getChannel();
         MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
@@ -69,8 +69,6 @@ public class FileAXT {
         }
 
         return file2delete.delete();
-
-
     }
 
 
