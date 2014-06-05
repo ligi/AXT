@@ -23,7 +23,7 @@ sourceSets {
     }
 }
 
-version = '0.26'
+version = '0.28'
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
