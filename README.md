@@ -11,20 +11,21 @@ The aim of this project is to provide code that is used in a lot of Android-Apps
 How?
 ===
 
-You can either [download the jar](https://ligi.ci.cloudbees.com/job/AXT/lastSuccessfulBuild/artifact/build/libs/) and use it - or pull the lib via maven - this is how this is done in gradle:
+You can either [ ![Download](https://api.bintray.com/packages/ligi/maven/axt/images/download.png) ](https://bintray.com/ligi/maven/axt/_latestVersion) and use it - or pull the lib via from jcenter ( is like mavenCentral, but better ) - this is how this is done in gradle:
 
 ```groovy
 repositories {
-    maven {
-        url "https://raw.github.com/ligi/ligis-mvn-repo/master"
-    }
+    jcenter()
 }
 
 dependencies {
-    compile 'org.ligi:AXT:0.26'
+    compile 'org.ligi:AXT:0.28'
 }
 
 ```
+
+Android now uses jcenter by default, so you might not need the first part.
+
 
 most helpers are invoked that way
 
