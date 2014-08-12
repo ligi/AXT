@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ligi/AXT.svg?branch=master)](https://travis-ci.org/ligi/AXT)
+
 Why?
 ====
 
