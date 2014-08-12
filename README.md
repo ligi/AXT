@@ -1,6 +1,3 @@
-[![Build Status](https://ligi.ci.cloudbees.com/job/AXT/badge/icon)](https://ligi.ci.cloudbees.com/job/AXT/)
-
-
 Why?
 ====
 
