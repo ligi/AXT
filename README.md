@@ -11,7 +11,7 @@ The aim of this project is to provide code that is used in a lot of Android-Apps
 How?
 ===
 
-You can either [ ![Download](https://api.bintray.com/packages/ligi/maven/axt/images/download.png) ](https://bintray.com/ligi/maven/axt/_latestVersion) and use it - or pull the lib via from jcenter ( is like mavenCentral, but better ) - this is how this is done in gradle:
+You can either [ ![Download](https://api.bintray.com/packages/ligi/maven/axt/images/download.png) ](https://bintray.com/ligi/maven/axt/_latestVersion) and use it - or pull the lib via jcenter ( is like mavenCentral, but better ) - this is how you should do it via gradle:
 
 ```groovy
 repositories {
