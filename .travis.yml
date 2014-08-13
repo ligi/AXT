@@ -8,6 +8,14 @@ branches:
 
 jdk: oraclejdk7
 
+deploy:
+  provider: releases
+  api_key:
+    secure: OT+1gzXdQ0u5OyUavJSg2vy4FSmFYJ7QsjffZ+KMbj/ZBor2OpzlySwXhfNmWqFegS
+  file: build/reports/
+  on:
+    repo: ligi/AXT
+
 notifications:
   email: true
 
