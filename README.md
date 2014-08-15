@@ -36,6 +36,35 @@ most helpers are invoked that way
  // invoke AXT
  AXT.at(editText).changeTextIfNeeded("new text?");
 ```
+there are also things beside these helpers that can reduce your code - e.g. a SimpleTextWatcher to reduce this common mess:
+
+```java
+textView.addTextChangedListener(new TextWatcher() {
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        // nothing
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        // nothing
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        theRealWork(s);
+    }
+});
+```
+to this:
+```java
+textView.addTextChangedListener(new SimpleTextWatcher() {
+    @Override
+    public void afterTextChanged(Editable s) {
+        theRealWork(s);
+    }
+});
+```
 
 Why the Name?
 =============
