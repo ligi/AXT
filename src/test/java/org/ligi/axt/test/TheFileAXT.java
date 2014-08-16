@@ -88,4 +88,17 @@ public class TheFileAXT {
     }
 
 
+    @Test
+    public void string_read_write_roundtrip() throws IOException, ClassNotFoundException {
+        File testFile = new File(EXT_DIR, "foo.txt");
+
+        String probe = "foo\r\nbar";
+
+        AXT.at(testFile).writeString(probe);
+        final String read = AXT.at(testFile).readToString();
+
+        assertThat(probe).isEqualTo(read);
+    }
+
+
 }
