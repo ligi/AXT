@@ -31,9 +31,9 @@ public class FileAXT {
     }
 
     public String readToString(Charset charset) throws IOException {
-        FileInputStream stream = new FileInputStream(file);
-        FileChannel fc = stream.getChannel();
-        MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
+        final FileInputStream stream = new FileInputStream(file);
+        final FileChannel fc = stream.getChannel();
+        final MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
         fc.close();
         stream.close();
         return charset.decode(bb).toString();
@@ -41,7 +41,7 @@ public class FileAXT {
 
     public boolean writeString(String string) {
         try {
-            FileWriter fileWriter = new FileWriter(file);
+            final FileWriter fileWriter = new FileWriter(file);
             fileWriter.write(string);
             fileWriter.close();
             return true;
@@ -60,7 +60,7 @@ public class FileAXT {
         }
 
         for (String child : file2delete.list()) {
-            File temp = new File(file2delete, child);
+            final File temp = new File(file2delete, child);
             if (temp.isDirectory()) {
                 deleteRecursive(temp);
             } else {
@@ -75,7 +75,7 @@ public class FileAXT {
     public <T extends Serializable> T loadToObject() throws IOException, ClassNotFoundException, ClassCastException {
 
         final ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
-        T returnClass = (T) is.readObject();
+        final T returnClass = (T) is.readObject();
         is.close();
         return returnClass;
     }
@@ -101,7 +101,7 @@ public class FileAXT {
     public boolean writeObject(Serializable object) {
         try {
             final FileOutputStream fos = new FileOutputStream(file);
-            ObjectOutputStream os = new ObjectOutputStream(fos);
+            final ObjectOutputStream os = new ObjectOutputStream(fos);
             os.writeObject(object);
             os.close();
             return true;
