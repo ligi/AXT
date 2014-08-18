@@ -1,7 +1,9 @@
 package org.ligi.axt.helpers;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.view.View;
 
@@ -65,4 +67,12 @@ public class ActivityAXT extends ContextAXT {
     public void enableRotation() {
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     }
+
+    public static void rethrowIntentExcludingSelf(final Activity activity) {
+        final ComponentName component = new ComponentName(activity, activity.getClass());
+        activity.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+        activity.startActivity(activity.getIntent());
+        activity.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+    }
+
 }
