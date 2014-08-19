@@ -1,4 +1,4 @@
-package org.ligi.axt.helpers;
+package org.ligi.axt.extensions;
 
 import java.io.File;
 import java.io.FileInputStream;

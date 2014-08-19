@@ -1,9 +1,9 @@
-package org.ligi.axt.helpers;
+package org.ligi.axt.extensions;
 
 import android.content.Context;
 import android.view.ViewConfiguration;
 
-import org.ligi.axt.helpers.misc.CommonIntentStarter;
+import org.ligi.axt.extensions.misc.CommonIntentStarter;
 
 import java.lang.reflect.Field;
 

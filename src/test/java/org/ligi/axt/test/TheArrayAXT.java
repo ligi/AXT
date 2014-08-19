@@ -3,7 +3,7 @@ package org.ligi.axt.test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.axt.AXT;
-import org.ligi.axt.helpers.ArrayAXT;
+import org.ligi.axt.extensions.ArrayAXT;
 import org.robolectric.RobolectricTestRunner;
 
 import static org.fest.assertions.Assertions.assertThat;

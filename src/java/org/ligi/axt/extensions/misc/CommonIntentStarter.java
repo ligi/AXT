@@ -1,4 +1,4 @@
-package org.ligi.axt.helpers.misc;
+package org.ligi.axt.extensions.misc;
 
 import android.content.Context;
 import android.content.Intent;

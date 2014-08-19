@@ -1,4 +1,4 @@
-package org.ligi.axt.helpers;
+package org.ligi.axt.extensions;
 
 public class ArrayAXT<T> {
 
