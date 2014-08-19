@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.ligi:AXT:0.28'
+    compile 'org.ligi:AXT:0.29'
 }
 
 ```
