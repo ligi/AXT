@@ -1,44 +1,22 @@
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
 
-            repository(url: "file://localhost/home/ligi/git/ligis-mvn-repo/")
-            pom.groupId = 'org.ligi'
-            pom.artifactId = 'AXT'
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'org.ligi'
+            artifactId 'AXT'
 
-            pom.project {
-                name "AXT Android eXTensions"
-                packaging "jar"
-                description "Common Android Code"
-                url "https://github.com/ligi/AXT"
+            from components.java
 
-                scm {
-                    // this looks strange and really redundant, but it seems to be the way to go..
-                    url "scm:git@github.com:ligi/AXT.git"
-                    connection "scm:git@github.com:ligi/AXT.git"
-                    developerConnection "scm:git@github.com:ligi/AXT.git"
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'ligi'
-                        name 'marcus büschleb'
-                    }
-                }
+            artifact sourceJar {
+                classifier "sources"
             }
         }
     }
-
 }
 
 
