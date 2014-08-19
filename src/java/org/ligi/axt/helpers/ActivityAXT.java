@@ -68,7 +68,7 @@ public class ActivityAXT extends ContextAXT {
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     }
 
-    public static void rethrowIntentExcludingSelf(final Activity activity) {
+    public void rethrowIntentExcludingSelf() {
         final ComponentName component = new ComponentName(activity, activity.getClass());
         activity.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
         activity.startActivity(activity.getIntent());
