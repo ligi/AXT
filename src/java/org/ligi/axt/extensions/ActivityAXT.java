@@ -2,6 +2,7 @@ package org.ligi.axt.extensions;
 
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -68,11 +69,31 @@ public class ActivityAXT extends ContextAXT {
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     }
 
+    /**
+     * sometimes you catch an intent that you did not really want or you have problems to process it
+     */
     public void rethrowIntentExcludingSelf() {
         final ComponentName component = new ComponentName(activity, activity.getClass());
         activity.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
-        activity.startActivity(activity.getIntent());
-        activity.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+
+        try {
+            final Intent intent = activity.getIntent();
+            intent.setComponent(null);
+            activity.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // might be activity not found in the case of no browser installed - just be really careful here - otherwise we might end up with the Activity disabled forever
+        } finally {
+            new android.os.Handler().postDelayed(
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            activity.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+                            activity.finish();
+                        }
+                    }, 250);
+
+        }
     }
 
 }
