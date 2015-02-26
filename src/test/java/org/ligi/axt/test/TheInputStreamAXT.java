@@ -16,7 +16,8 @@ import static org.fest.assertions.Assertions.assertThat;
 @RunWith(RobolectricTestRunner.class)
 public class TheInputStreamAXT {
 
-    public static final String STRING_PROBE = "132QWE";
+    private static final String STRING_PROBE = "first line\nsecond line";
+
     private File ROOT = Environment.getExternalStorageDirectory();
 
     @Test
