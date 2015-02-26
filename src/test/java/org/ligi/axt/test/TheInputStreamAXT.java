@@ -16,7 +16,8 @@ import static org.fest.assertions.Assertions.assertThat;
 @RunWith(RobolectricTestRunner.class)
 public class TheInputStreamAXT {
 
-    public static final String STRING_PROBE = "132QWE";
+    private static final String STRING_PROBE = "first line\nsecond line";
+
     private File ROOT = Environment.getExternalStorageDirectory();
 
     @Test
@@ -26,6 +27,13 @@ public class TheInputStreamAXT {
         AXT.at(new StringInputStream(STRING_PROBE)).toFile(file);
 
         assertThat(STRING_PROBE).isEqualTo(AXT.at(file).readToString());
+    }
+
+    @Test
+    public void should_read_to_string_correctly() throws IOException {
+        String readFromStream = AXT.at(new StringInputStream(STRING_PROBE)).readToString();
+
+        assertThat(readFromStream).isEqualTo(STRING_PROBE);
     }
 
 }

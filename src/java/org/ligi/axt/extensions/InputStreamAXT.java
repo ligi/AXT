@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 
 public class InputStreamAXT {
 
+    private static final int CHARACTER_READ_BUFFER_SIZE = 1024;
+
     private final InputStream inputStream;
 
     public InputStreamAXT(InputStream inputStream) {
@@ -29,15 +31,27 @@ public class InputStreamAXT {
 
     public String readToString() throws IOException {
         InputStreamReader is = new InputStreamReader(inputStream);
-        StringBuilder sb = new StringBuilder();
-        BufferedReader br = new BufferedReader(is);
-        String read = br.readLine();
-
-        while (read != null) {
-            sb.append(read);
-            read = br.readLine();
+        try {
+            return readFromInputStreamReaderToString(is);
+        } finally {
+            is.close();
         }
+    }
 
-        return sb.toString();
+    private String readFromInputStreamReaderToString(InputStreamReader is) throws IOException {
+        BufferedReader reader = new BufferedReader(is, CHARACTER_READ_BUFFER_SIZE);
+        try {
+            char[] buffer = new char[CHARACTER_READ_BUFFER_SIZE];
+            StringBuilder sb = new StringBuilder();
+
+            int len;
+            while ((len = reader.read(buffer)) >= 0) {
+                sb.append(buffer, 0, len);
+            }
+
+            return sb.toString();
+        } finally {
+            reader.close();
+        }
     }
 }
