@@ -28,4 +28,11 @@ public class TheInputStreamAXT {
         assertThat(STRING_PROBE).isEqualTo(AXT.at(file).readToString());
     }
 
+    @Test
+    public void should_read_to_string_correctly() throws IOException {
+        String readFromStream = AXT.at(new StringInputStream(STRING_PROBE)).readToString();
+
+        assertThat(readFromStream).isEqualTo(STRING_PROBE);
+    }
+
 }
