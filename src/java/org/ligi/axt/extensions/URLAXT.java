@@ -16,36 +16,33 @@ public class URLAXT {
     }
 
     public String downloadToString() {
-
-        URLConnection con;
-        InputStream in = null;
         try {
-            con = url.openConnection();
-            in = con.getInputStream();
-        } catch (IOException e2) {
-            // TODO Auto-generated catch block
-            e2.printStackTrace();
-        }
-
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
-        } catch (Exception e3) {
-            e3.printStackTrace();
+            URLConnection con = url.openConnection();
+            InputStream in = con.getInputStream();
+            try {
+                return readToStringAsUtf8(in);
+            } finally {
+                in.close();
+            }
+        } catch (IOException e) {
             return null;
         }
-        StringBuilder sb = new StringBuilder();
-        String line = null;
+    }
 
+    private String readToStringAsUtf8(InputStream in) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
         try {
+            StringBuilder sb = new StringBuilder();
+
+            String line;
             while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
+                sb.append(line).append("\n");
             }
-        } catch (IOException e3) {
+
+            return sb.toString();
+        } finally {
+            reader.close();
         }
-
-        return sb.toString();
-
     }
 
 }
