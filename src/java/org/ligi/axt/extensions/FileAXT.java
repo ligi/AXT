@@ -32,21 +32,38 @@ public class FileAXT {
 
     public String readToString(Charset charset) throws IOException {
         final FileInputStream stream = new FileInputStream(file);
+        try {
+            return readToStringFromFileInputStream(charset, stream);
+        } finally {
+            stream.close();
+        }
+    }
+
+    private String readToStringFromFileInputStream(Charset charset, FileInputStream stream) throws IOException {
         final FileChannel fc = stream.getChannel();
-        final MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
-        fc.close();
-        stream.close();
-        return charset.decode(bb).toString();
+        try {
+            final MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
+            return charset.decode(bb).toString();
+        } finally {
+            fc.close();
+        }
     }
 
     public boolean writeString(String string) {
         try {
-            final FileWriter fileWriter = new FileWriter(file);
-            fileWriter.write(string);
-            fileWriter.close();
+            writeStringToFile(string);
             return true;
         } catch (IOException e) {
             return false;
+        }
+    }
+
+    private void writeStringToFile(String string) throws IOException {
+        final FileWriter fileWriter = new FileWriter(file);
+        try {
+            fileWriter.write(string);
+        } finally {
+            fileWriter.close();
         }
     }
 
@@ -71,22 +88,18 @@ public class FileAXT {
         return file2delete.delete();
     }
 
-
     public <T extends Serializable> T loadToObject() throws IOException, ClassNotFoundException, ClassCastException {
-
         final ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
-        final T returnClass = (T) is.readObject();
-        is.close();
-        return returnClass;
+        try {
+            return (T) is.readObject();
+        } finally {
+            is.close();
+        }
     }
-
 
     public <T extends Serializable> T loadToObjectOrNull() {
         try {
-            final ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
-            T returnClass = (T) is.readObject();
-            is.close();
-            return returnClass;
+            return loadToObject();
         } catch (IOException e) {
             // causes null return
         } catch (ClassNotFoundException e) {
@@ -100,18 +113,33 @@ public class FileAXT {
 
     public boolean writeObject(Serializable object) {
         try {
-            final FileOutputStream fos = new FileOutputStream(file);
-            final ObjectOutputStream os = new ObjectOutputStream(fos);
-            os.writeObject(object);
-            os.close();
+            writeObjectToFile(object);
             return true;
         } catch (FileNotFoundException e) {
             // causes return false
         } catch (IOException e) {
             // causes return false
         }
+
         return false;
     }
 
+    private void writeObjectToFile(Serializable object) throws IOException {
+        final FileOutputStream fos = new FileOutputStream(file);
+        try {
+            writeObjectToFileOutputStream(object, fos);
+        } finally {
+            fos.close();
+        }
+    }
+
+    private void writeObjectToFileOutputStream(Serializable object, FileOutputStream fos) throws IOException {
+        final ObjectOutputStream os = new ObjectOutputStream(fos);
+        try {
+            os.writeObject(object);
+        } finally {
+            os.close();
+        }
+    }
 
 }

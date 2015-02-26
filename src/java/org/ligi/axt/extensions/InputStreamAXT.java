@@ -19,14 +19,16 @@ public class InputStreamAXT {
 
     public void toFile(File f) throws IOException {
         FileOutputStream fos = new FileOutputStream(f);
+        try {
+            byte[] buffer = new byte[1024];
+            int len;
 
-        byte[] buffer = new byte[1024];
-        int len;
-
-        while ((len = inputStream.read(buffer)) > 0) {
-            fos.write(buffer, 0, len);
+            while ((len = inputStream.read(buffer)) > 0) {
+                fos.write(buffer, 0, len);
+            }
+        } finally {
+            fos.close();
         }
-
     }
 
     public String readToString() throws IOException {
