@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="org.ligi.floatlabel">
+
+    <application>
+        <activity android:name="org.ligi.axt.SquareViewTestActivity"/>
+    </application>
+
+</manifest>
+
+

@@ -1,16 +1,14 @@
 package org.ligi.axt.test;
 
 import android.view.View;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.ligi.CustomRobolectricRunner;
 import org.ligi.axt.AXT;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import static org.fest.assertions.Assertions.assertThat;
-
-@RunWith(RobolectricTestRunner.class)
+@RunWith(CustomRobolectricRunner.class)
 public class TheViewAXT {
 
     @Test

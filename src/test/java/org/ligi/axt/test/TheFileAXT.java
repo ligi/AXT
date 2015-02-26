@@ -1,17 +1,14 @@
 package org.ligi.axt.test;
 
 import android.os.Environment;
-
+import java.io.File;
+import java.io.IOException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.axt.AXT;
 import org.robolectric.RobolectricTestRunner;
-
-import java.io.File;
-import java.io.IOException;
-
-import static org.fest.assertions.Assertions.assertThat;
-import static org.fest.assertions.Fail.fail;
+import static junit.framework.Assert.fail;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(RobolectricTestRunner.class)
 public class TheFileAXT {

@@ -11,7 +11,7 @@ import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
 import static junit.framework.Assert.assertEquals;
-import static org.fest.assertions.Fail.fail;
+import static junit.framework.Assert.fail;
 
 @RunWith(RobolectricTestRunner.class)
 public class TheEditTextAXT {

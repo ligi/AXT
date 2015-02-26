@@ -1,71 +1,59 @@
-apply plugin: 'java-robolectric'
-apply plugin: 'idea'
-apply from: 'ci/deploy.gradle'
-
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath group: 'com.stanfy.android', name: 'gradle-plugin-java-robolectric', version: '2.0'
+        classpath 'com.android.tools.build:gradle:1.1.0'
     }
 }
 
-configurations {
-    provided
-}
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/java'
-        }
-    }
-}
-
-version = '0.31'
-
-targetCompatibility = '1.7'
-sourceCompatibility = '1.7'
-
-javarob {
-    packageName = 'org.ligi.axt'
-}
-
-test {
-    scanForTestClasses = false
-    include "**/The*.class"
-    exclude '**/*$*' //exclude inner classes
-}
+apply plugin: 'com.android.library'
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
-test {
-    afterTest { desc, result ->
-        println "Testing ${desc.className} ${desc.name} -> ${result.resultType}"
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        disable "NewApi"
+    }
+
+    packagingOptions {
+        // needed for assertJ
+        exclude 'asm-license.txt'
+        exclude 'LICENSE'
+        exclude 'NOTICE'
+
+        exclude 'LICENSE.txt'
     }
 }
+
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.10'
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.0'
-    testCompile group: 'org.easytesting', name: 'fest-assert', version: '1.4'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'com.squareup.assertj:assertj-android:1.0.0'
 
-    provided "com.google.android:android:4.1.1.4"
-    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.1.1'
-    testCompile "com.google.android:android:4.1.1.4"
+    androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
 
+    androidTestCompile 'org.mockito:mockito-core:1.9.5'
+    androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
+
+    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.4'
 }
 
-sourceSets.main.compileClasspath += configurations.provided
-
-idea {
-    module {
-        scopes .PROVIDED.plus += configurations.provided
-    }
-}
-
-
-group="org.ligi"
+group = "org.ligi"
