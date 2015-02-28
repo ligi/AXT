@@ -56,4 +56,54 @@ dependencies {
     testCompile group: 'org.robolectric', name: 'robolectric', version: '2.4'
 }
 
-group = "org.ligi"
+apply plugin: 'maven'
+
+def groupId = 'org.ligi'
+def artifactId = 'axt'
+def version = '0.32'
+ 
+def localReleaseDest = "${buildDir}/release/${version}"
+ 
+task androidJavadocs(type: Javadoc) {
+    ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+    classpath += files(ext.androidJar)
+}
+ 
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+ 
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+ 
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.groupId = groupId
+        pom.artifactId = artifactId
+        pom.version = version
+        // Add other pom properties here if you want (developer details / licenses)
+        repository(url: "file://${localReleaseDest}")
+    }
+}
+ 
+task zipRelease(type: Zip) {
+    from localReleaseDest
+    destinationDir buildDir
+    archiveName "release-${version}.zip"
+}
+ 
+task generateRelease << {
+    println "Release ${version} can be found at ${localReleaseDest}/"
+    println "Release ${version} zipped can be found ${buildDir}/release-${version}.zip"
+}
+ 
+generateRelease.dependsOn(uploadArchives)
+generateRelease.dependsOn(zipRelease)
+ 
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
