@@ -1,12 +1,23 @@
-language: java
+language: android
+android:
+  components:
+  - build-tools-20.0.0
+  - android-19
+  - sysimg-19
+  - add-on
+  - extra
+  licenses:
+  - android-sdk-preview-license-52d11cd2
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+jdk: oraclejdk7
+
 
 branches:
   only:
     - dev
     - master
     - integration
-
-jdk: oraclejdk7
 
 notifications:
   email: true
