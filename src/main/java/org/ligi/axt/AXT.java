@@ -26,6 +26,7 @@ import org.ligi.axt.extensions.InputStreamAXT;
 import org.ligi.axt.extensions.IntentAXT;
 import org.ligi.axt.extensions.PaintAXT;
 import org.ligi.axt.extensions.ResolveInfoAXT;
+import org.ligi.axt.extensions.StringAXT;
 import org.ligi.axt.extensions.URLAXT;
 import org.ligi.axt.extensions.ViewAXT;
 import org.ligi.axt.extensions.WindowManagerAXT;
@@ -89,5 +90,9 @@ public class AXT {
 
     public static ResolveInfoAXT at(ResolveInfo resolveInfo) {
         return new ResolveInfoAXT(resolveInfo);
+    }
+
+    public static StringAXT at(String string) {
+        return new StringAXT(string);
     }
 }
