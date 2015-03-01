@@ -19,6 +19,9 @@ branches:
     - master
     - integration
 
+script:
+  ./gradlew clean build
+
 notifications:
   email: true
 
