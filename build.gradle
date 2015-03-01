@@ -59,7 +59,7 @@ dependencies {
 apply plugin: 'maven'
 
 def groupId = 'org.ligi'
-def artifactId = 'axt'
+def artifactId = 'AXT'
 def version = '0.32'
  
 def localReleaseDest = "${buildDir}/release/${version}"
