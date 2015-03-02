@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
@@ -28,6 +29,7 @@ import org.ligi.axt.extensions.PaintAXT;
 import org.ligi.axt.extensions.ResolveInfoAXT;
 import org.ligi.axt.extensions.StringAXT;
 import org.ligi.axt.extensions.URLAXT;
+import org.ligi.axt.extensions.UriAXT;
 import org.ligi.axt.extensions.ViewAXT;
 import org.ligi.axt.extensions.WindowManagerAXT;
 
@@ -94,5 +96,9 @@ public class AXT {
 
     public static StringAXT at(String string) {
         return new StringAXT(string);
+    }
+
+    public static UriAXT at(Uri uri) {
+        return new UriAXT(uri);
     }
 }
