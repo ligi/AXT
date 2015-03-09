@@ -1,3 +1,7 @@
+def groupId = 'org.ligi'
+def artifactId = 'AXT'
+def version = '0.33'
+
 buildscript {
     repositories {
         jcenter()
@@ -22,7 +26,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 21
         versionCode 1
-        versionName "0.1"
+        versionName version
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -58,10 +62,6 @@ dependencies {
 
 apply plugin: 'maven'
 
-def groupId = 'org.ligi'
-def artifactId = 'AXT'
-def version = '0.32'
- 
 def localReleaseDest = "${buildDir}/release/${version}"
  
 task androidJavadocs(type: Javadoc) {
