@@ -51,15 +51,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.9.5'
     testCompile 'com.squareup.assertj:assertj-android:1.0.0'
+    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.4'
 
     androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
-
     androidTestCompile 'org.mockito:mockito-core:1.9.5'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
-
-    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.4'
 }
 
 apply plugin: 'maven'
