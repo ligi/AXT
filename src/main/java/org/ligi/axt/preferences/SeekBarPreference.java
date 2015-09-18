@@ -32,7 +32,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
  */
 public class SeekBarPreference extends DialogPreference implements OnSeekBarChangeListener {
 
-    private Context context;
+    private final Context context;
     private SeekBar seek_bar;
     private int max = Integer.MAX_VALUE;
     private EditText edit_text;
@@ -58,7 +58,7 @@ public class SeekBarPreference extends DialogPreference implements OnSeekBarChan
 
         edit_text = new EditText(context);
         edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
-        edit_text.setText("" + getPersistedInt(0));
+        edit_text.setText(String.valueOf(getPersistedInt(0)));
         layout.addView(edit_text);
 
 
@@ -93,7 +93,7 @@ public class SeekBarPreference extends DialogPreference implements OnSeekBarChan
 
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-        edit_text.setText("" + progress);
+        edit_text.setText(String.valueOf(progress));
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {
