@@ -14,6 +14,7 @@ public class ActivityFinishingOnCancelListener implements OnCancelListener {
 
     @Override
     public void onCancel(DialogInterface dialog) {
+        dialog.dismiss();
         activity2finish.finish();
     }
 
