@@ -19,9 +19,9 @@ public class SquareView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        int parentWidth = View.MeasureSpec.getSize(widthMeasureSpec);
-        int parentHeight = View.MeasureSpec.getSize(heightMeasureSpec);
-        int size = Math.min(parentWidth, parentHeight);
+        final int parentWidth = View.MeasureSpec.getSize(widthMeasureSpec);
+        final int parentHeight = View.MeasureSpec.getSize(heightMeasureSpec);
+        final int size = Math.min(parentWidth, parentHeight);
         this.setMeasuredDimension(size, size);
     }
 }
