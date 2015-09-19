@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.axt.views.SeekBarMinMax;
-import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.RuntimeEnvironment;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Fail.fail;
 
@@ -20,7 +20,7 @@ public class TheSeekbarMinMax {
 
     @Before
     public void setup() {
-        tested = new SeekBarMinMax(Robolectric.application, MIN, MAX);
+        tested = new SeekBarMinMax(RuntimeEnvironment.application, MIN, MAX);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class TheSeekbarMinMax {
     @Test
     public void should_fail_for_min_bigger_max() {
         try {
-            tested = new SeekBarMinMax(Robolectric.application, 100, 0);
+            tested = new SeekBarMinMax(RuntimeEnvironment.application, 100, 0);
             fail("SeekBarMinMax was not throwing IllegalArgument for min>max");
         } catch (IllegalArgumentException e) {
         }

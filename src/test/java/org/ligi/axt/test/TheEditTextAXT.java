@@ -3,13 +3,11 @@ package org.ligi.axt.test;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.axt.AXT;
-import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-
+import org.robolectric.RuntimeEnvironment;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
 
@@ -20,7 +18,7 @@ public class TheEditTextAXT {
     @Test
     public void should_set_text_when_needed() {
 
-        EditText editText = new EditText(Robolectric.application);
+        EditText editText = new EditText(RuntimeEnvironment.application);
 
         AXT.at(editText).changeTextIfNeeded(TEXT2SET);
 
@@ -31,7 +29,7 @@ public class TheEditTextAXT {
     @Test
     public void should_not_set_text_when_not_needed() {
 
-        EditText editText = new EditText(Robolectric.application);
+        EditText editText = new EditText(RuntimeEnvironment.application);
 
         editText.setText(TEXT2SET);
 

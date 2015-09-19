@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.3.1'
         classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.0'
     }
 }
@@ -20,8 +20,8 @@ repositories {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         minSdkVersion 9
@@ -51,10 +51,10 @@ dependencies {
     testCompile 'org.apache.maven:maven-ant-tasks:2.1.3'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
-    testCompile 'com.squareup.assertj:assertj-android:1.0.0'
-    testCompile group: 'org.robolectric', name: 'robolectric', version: '2.4'
+    testCompile 'com.squareup.assertj:assertj-android:1.1.0'
+    testCompile group: 'org.robolectric', name: 'robolectric', version: '3.0'
 
-    androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
+    androidTestCompile 'com.squareup.assertj:assertj-android:1.1.0'
     androidTestCompile 'org.mockito:mockito-core:1.10.19'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'

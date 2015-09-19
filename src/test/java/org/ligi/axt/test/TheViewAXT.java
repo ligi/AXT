@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ligi.CustomRobolectricRunner;
 import org.ligi.axt.AXT;
-import org.robolectric.Robolectric;
+import org.robolectric.RuntimeEnvironment;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(CustomRobolectricRunner.class)
@@ -13,7 +13,7 @@ public class TheViewAXT {
 
     @Test
     public void should_correctly_set_visibility() {
-        View v = new View(Robolectric.application);
+        View v = new View(RuntimeEnvironment.application);
 
         AXT.at(v).setVisibility(false);
 
