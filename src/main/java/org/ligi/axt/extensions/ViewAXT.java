@@ -3,8 +3,10 @@ package org.ligi.axt.extensions;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 
 public class ViewAXT {
@@ -63,4 +65,24 @@ public class ViewAXT {
             }
         });
     }
+
+
+    public void onFirstGlobalLayout(final Runnable runnable) {
+        view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+            @Override
+            public void onGlobalLayout() {
+
+                // Removing layout listener to avoid multiple calls
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+                    view.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                } else {
+                    view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+
+                runnable.run();
+            }
+        });
+    }
+
 }
