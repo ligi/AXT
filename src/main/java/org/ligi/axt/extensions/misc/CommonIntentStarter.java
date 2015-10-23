@@ -24,7 +24,7 @@ public class CommonIntentStarter {
         final Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_TEXT, urlString);
         intent.setType("text/plain");
-        start(intent);
+        startChooser(intent);
     }
 
     public void activityFromClass(Class class2start) {
@@ -35,6 +35,11 @@ public class CommonIntentStarter {
     public CommonIntentStarter noNewTask() {
         asNewTask = false;
         return this;
+    }
+
+    private void startChooser(final Intent intent) {
+        final Intent chooserIntent = Intent.createChooser(intent, null);
+        start(chooserIntent);
     }
 
     private void start(Intent intent) {
