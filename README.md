@@ -78,7 +78,7 @@ Terms
 This library is released under Apache 2 license. Feel free to use it. Pull requests are welcome.
 
 
-    Copyright 2013 ligi
+    Copyright 2013-2016 ligi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
