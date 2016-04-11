@@ -14,6 +14,11 @@ public class UriAXT {
     }
 
     public File loadImage(final Context context) {
-        return new ImageFromIntentUriToFileConverter(context).extract(uri);
+        final String filePath = new ImageFromIntentUriToFileConverter(context).extract(uri);
+        if (filePath!=null) {
+            return new File(filePath);
+        }
+
+        return null;
     }
 }
