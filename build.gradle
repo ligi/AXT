@@ -1,6 +1,6 @@
 def groupId = 'org.ligi'
 def artifactId = 'AXT'
-def version = '0.36'
+def version = '0.37'
 
 buildscript {
     repositories {
